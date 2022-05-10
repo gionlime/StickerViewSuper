@@ -4,6 +4,11 @@ import android.graphics.RectF;
 
 import static java.lang.Math.round;
 
+/**
+ * create by jeek
+ * 2022/04/27
+ * des:
+ **/
 public class StickerUtils {
 
   public static RectF trapToRect(float[] array) {

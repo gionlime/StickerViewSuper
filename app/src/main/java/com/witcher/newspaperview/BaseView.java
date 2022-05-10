@@ -18,6 +18,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 
+
+/**
+ * create by jeek
+ * 2022/04/27
+ * des:
+ **/
 public abstract class BaseView extends View {
 
     public interface OnSizeChangeListener {

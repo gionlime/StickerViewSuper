@@ -27,8 +27,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by JunyiZhou on 2016/2/3.
- */
+ * create by jeek
+ * 2022/04/27
+ * des:
+ **/
 public class MediaPickerActivity extends Activity implements DialogInterface.OnCancelListener {
 
     public static void saveImageToGallery(Context context, String fileName) {

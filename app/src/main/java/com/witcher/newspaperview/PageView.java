@@ -15,6 +15,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Scroller;
 
+
+/**
+ * create by jeek
+ * 2022/04/27
+ * des:
+ **/
 public class PageView extends View {
 
     private static final String TAG = "hmg";

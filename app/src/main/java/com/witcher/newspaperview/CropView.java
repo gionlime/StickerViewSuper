@@ -4,6 +4,12 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+
+/**
+ * create by jeek
+ * 2022/04/27
+ * des:
+ **/
 public class CropView extends BaseView {
 
     public CropView(Context context, AttributeSet attributeSet) {

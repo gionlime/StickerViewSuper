@@ -9,8 +9,10 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 /**
- * Created by JunyiZhou on 2016/2/3.
- */
+ * create by jeek
+ * 2022/04/27
+ * des:
+ **/
 public class StickerApplication extends Application {
 
     @Override
