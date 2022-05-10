@@ -521,15 +521,18 @@ public class StickerView extends BaseView {
         //落点控制
         float transX;
         float transY;
-        if (paperCount == 0) {
-            //中间落点
-            transX = (getWidth() - imageGroupTemp.bitmap.getWidth()) / 2;
-            transY = (getHeight() - imageGroupTemp.bitmap.getHeight()) / 2;
-        } else {
-            //随机落点
-            transX = new Random().nextInt(getWidth() - imageGroupTemp.bitmap.getWidth());
-            transY = new Random().nextInt(getHeight() - imageGroupTemp.bitmap.getHeight());
-        }
+        //中间落点
+        transX = (getWidth() - imageGroupTemp.bitmap.getWidth()) / 2;
+        transY = (getHeight() - imageGroupTemp.bitmap.getHeight()) / 2;
+//        if (paperCount == 0) {
+//            //中间落点
+//            transX = (getWidth() - imageGroupTemp.bitmap.getWidth()) / 2;
+//            transY = (getHeight() - imageGroupTemp.bitmap.getHeight()) / 2;
+//        } else {
+//            //随机落点
+//            transX = new Random().nextInt(getWidth() - imageGroupTemp.bitmap.getWidth());
+//            transY = new Random().nextInt(getHeight() - imageGroupTemp.bitmap.getHeight());
+//        }
         imageGroupTemp.matrix.postTranslate(transX, transY);
 
         mDecalImageGroupList.add(imageGroupTemp);
