@@ -210,12 +210,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ImageLoader.getInstance().loadImage(decalList[getPosition()], new SimpleImageLoadingListener() {
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                    // TODO:  设置图片宽高
                     Bitmap b;
-                    if (count % 2 == 0) {
-                        b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight() / 2, true);
-                    } else {
-                        b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight(), true);
-                    }
+                    b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight() / 2, true);
+//                    if (count % 2 == 0) {
+//                        b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight() / 2, true);
+//                    } else {
+//                        b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight(), true);
+//                    }
                     mNewsPaperView.addPaper(b);
                     count++;
                 }

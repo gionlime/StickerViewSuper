@@ -68,12 +68,12 @@ public class StickerView extends BaseView {
 
         mPaintFlip = new Paint();
         mPaintFlip.setAntiAlias(true);
-        mPaintFlip.setColor(Color.BLUE);
+        mPaintFlip.setColor(Color.WHITE);
         mPaintFlip.setAlpha(170);
 
         mPaintMove = new Paint();
         mPaintMove.setAntiAlias(true);
-        mPaintMove.setColor(Color.BLACK);
+        mPaintMove.setColor(Color.WHITE);
         mPaintMove.setAlpha(170);
     }
 
@@ -110,13 +110,14 @@ public class StickerView extends BaseView {
         canvas.drawLine(x4, y4, x3, y3, mPaintForLineAndCircle);
         canvas.drawLine(x3, y3, x1, y1, mPaintForLineAndCircle);
 
-        //删除
-        canvas.drawCircle(x2, y2, mIconWidth, mPaintForLineAndCircle);
-        canvas.drawBitmap(mDeleteIcon, x2 - mDeleteIcon.getWidth() / 2, y2 - mDeleteIcon.getHeight() / 2, mPaintForBitmap);
-
         //翻转
-        canvas.drawCircle(x1, y1, mIconWidth, mPaintFlip);
-        canvas.drawBitmap(mFlipIcon, x1 - mFlipIcon.getWidth() / 2, y1 - mFlipIcon.getHeight() / 2, mPaintForBitmap);
+        canvas.drawCircle(x2, y2, mIconWidth, mPaintFlip);
+        canvas.drawBitmap(mFlipIcon, x2 - mDeleteIcon.getWidth() / 2, y2 - mDeleteIcon.getHeight() / 2, mPaintForBitmap);
+
+        //删除
+        canvas.drawCircle(x1, y1, mIconWidth, mPaintForLineAndCircle);
+        canvas.drawBitmap(mDeleteIcon, x1 - mFlipIcon.getWidth() / 2, y1 - mFlipIcon.getHeight() / 2, mPaintForBitmap);
+
         //拖动
         canvas.drawCircle(x4, y4, mIconWidth, mPaintMove);
         canvas.drawBitmap(mMoveIcon, x4 - mMoveIcon.getWidth() / 2, y4 - mMoveIcon.getHeight() / 2, mPaintForBitmap);
