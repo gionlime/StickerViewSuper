@@ -12,14 +12,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 /**
  * create by jeek
@@ -28,16 +28,13 @@ import androidx.recyclerview.widget.RecyclerView;
  **/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static int count = 0;
     private TextView mFuncCrop, mFuncDecal, mFuncFilter;
-
     private CropView mCropView;
     private StickerView mNewsPaperView;
-
     private Toolbar toolbar;
-
     private RecyclerView mRecyclerView;
     private LinearLayout ll_btn;
-
     private String[] decalList;
     private String[] desList;
 
@@ -214,9 +211,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     Bitmap b;
-                    if(count%2==0){
+                    if (count % 2 == 0) {
                         b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight() / 2, true);
-                    }else{
+                    } else {
                         b = Bitmap.createScaledBitmap(loadedImage, loadedImage.getWidth() / 2, loadedImage.getHeight(), true);
                     }
                     mNewsPaperView.addPaper(b);
@@ -226,6 +223,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-    public static int count = 0;
 
 }

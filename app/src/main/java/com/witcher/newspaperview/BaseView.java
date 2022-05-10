@@ -26,15 +26,11 @@ import java.util.List;
  **/
 public abstract class BaseView extends View {
 
-    public interface OnSizeChangeListener {
-        void onSizeChanged(int w, int h, int oldw, int oldh);
-    }
-
     protected static final int NONE = 0;
     protected static final int DRAG = 1;
     protected static final int ZOOM = 2;
     protected static final int SINGLE_ZOOM = 3;
-
+    protected final Paint mPaintForBitmap;
     protected int mMode = NONE;
 
     protected float mDownX = 0;
@@ -56,8 +52,6 @@ public abstract class BaseView extends View {
     protected OnSizeChangeListener mOnSizeChangedListener = null;
 
     protected ImageGroup mCropImageGroup = new ImageGroup();
-
-    protected final Paint mPaintForBitmap;
 
     public BaseView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -253,6 +247,10 @@ public abstract class BaseView extends View {
 
     public void setOnSizeChangeListener(OnSizeChangeListener listener) {
         mOnSizeChangedListener = listener;
+    }
+
+    public interface OnSizeChangeListener {
+        void onSizeChanged(int w, int h, int oldw, int oldh);
     }
 
     public static class ImageGroup {

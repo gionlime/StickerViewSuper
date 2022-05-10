@@ -24,26 +24,17 @@ import android.widget.Scroller;
 public class PageView extends View {
 
     private static final String TAG = "hmg";
-    private int mWidth = 480;
-    private int mHeight = 800;
-    private int mCornerX = 0; // 拖拽点对应的页脚
-    private int mCornerY = 0;
-    private Path mPath0;
-    private Path mPath1;
     Bitmap mCurPageBitmap = null; // 当前页
     Bitmap mNextPageBitmap = null;
-
     PointF mTouch = new PointF(); // 拖拽点
     PointF mBezierStart1 = new PointF(); // 贝塞尔曲线起始点
     PointF mBezierControl1 = new PointF(); // 贝塞尔曲线控制点
     PointF mBeziervertex1 = new PointF(); // 贝塞尔曲线顶点
     PointF mBezierEnd1 = new PointF(); // 贝塞尔曲线结束点
-
     PointF mBezierStart2 = new PointF(); // 另一条贝塞尔曲线
     PointF mBezierControl2 = new PointF();
     PointF mBeziervertex2 = new PointF();
     PointF mBezierEnd2 = new PointF();
-
     float mMiddleX;
     float mMiddleY;
     float mDegrees;
@@ -51,24 +42,26 @@ public class PageView extends View {
     ColorMatrixColorFilter mColorMatrixFilter;
     Matrix mMatrix;
     float[] mMatrixArray = {0, 0, 0, 0, 0, 0, 0, 0, 1.0f};
-
     boolean mIsRTandLB; // 是否属于右上左下
-    float mMaxLength = (float) Math.hypot(mWidth, mHeight);
     int[] mBackShadowColors;
     int[] mFrontShadowColors;
     GradientDrawable mBackShadowDrawableLR;
     GradientDrawable mBackShadowDrawableRL;
     GradientDrawable mFolderShadowDrawableLR;
     GradientDrawable mFolderShadowDrawableRL;
-
     GradientDrawable mFrontShadowDrawableHBT;
     GradientDrawable mFrontShadowDrawableHTB;
     GradientDrawable mFrontShadowDrawableVLR;
     GradientDrawable mFrontShadowDrawableVRL;
-
     Paint mPaint;
-
     Scroller mScroller;
+    private int mWidth = 480;
+    private int mHeight = 800;
+    float mMaxLength = (float) Math.hypot(mWidth, mHeight);
+    private int mCornerX = 0; // 拖拽点对应的页脚
+    private int mCornerY = 0;
+    private Path mPath0;
+    private Path mPath1;
 
     public PageView(Context context) {
         super(context);
@@ -226,11 +219,11 @@ public class PageView extends View {
         // Log.i("hmg", "mBezierEnd2.x  " + mBezierEnd2.x + "  mBezierEnd2.y  "
         // + mBezierEnd2.y);
 
-		/*
+        /*
          * mBeziervertex1.x 推导
-		 * ((mBezierStart1.x+mBezierEnd1.x)/2+mBezierControl1.x)/2 化简等价于
-		 * (mBezierStart1.x+ 2*mBezierControl1.x+mBezierEnd1.x) / 4
-		 */
+         * ((mBezierStart1.x+mBezierEnd1.x)/2+mBezierControl1.x)/2 化简等价于
+         * (mBezierStart1.x+ 2*mBezierControl1.x+mBezierEnd1.x) / 4
+         */
         mBeziervertex1.x = (mBezierStart1.x + 2 * mBezierControl1.x + mBezierEnd1.x) / 4;
         mBeziervertex1.y = (2 * mBezierControl1.y + mBezierStart1.y + mBezierEnd1.y) / 4;
         mBeziervertex2.x = (mBezierStart2.x + 2 * mBezierControl2.x + mBezierEnd2.x) / 4;

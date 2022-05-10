@@ -33,6 +33,19 @@ import java.util.List;
  **/
 public class MediaPickerActivity extends Activity implements DialogInterface.OnCancelListener {
 
+    public static final String MEDIA_URI = "MEDIA_URI";
+    public static final String MEDIA_TYPE = "MEDIA_TYPE";
+    public static final String MEDIA_IMAGE = "image/*";
+    public static final String MEDIA_VIDEO = "video/*";
+    public static final Uri URI_IMAGE = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+    public static final Uri URI_VIDEO = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+    public static final int REQUEST_MEDIA_PICKER_ACTIVITY = 10;
+    private final int REQUEST_CODE_FROM_GALLERY = 1;
+    private final int REQUEST_CODE_FROM_CAMERA = 2;
+    private String mTempFilePath;
+    private AlertDialog mAlertDialog;
+    private String type = "";
+
     public static void saveImageToGallery(Context context, String fileName) {
         // 其次把文件插入到系统图库
         try {
@@ -83,24 +96,10 @@ public class MediaPickerActivity extends Activity implements DialogInterface.OnC
         return cacheDir.getAbsolutePath() + File.separator + sdf.format(date) + ".png";
     }
 
-    public static final String MEDIA_URI = "MEDIA_URI";
-
-    public static final String MEDIA_TYPE = "MEDIA_TYPE";
-    public static final String MEDIA_IMAGE = "image/*";
-    public static final String MEDIA_VIDEO = "video/*";
-
-    public static final Uri URI_IMAGE = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-    public static final Uri URI_VIDEO = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-
-    public static final int REQUEST_MEDIA_PICKER_ACTIVITY = 10;
-
-    private final int REQUEST_CODE_FROM_GALLERY = 1;
-    private final int REQUEST_CODE_FROM_CAMERA = 2;
-
-    private String mTempFilePath;
-    private AlertDialog mAlertDialog;
-
-    private String type = "";
+    public static boolean checkIntent(Context context, Intent intent) {
+        List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        return list.size() > 0;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -248,10 +247,5 @@ public class MediaPickerActivity extends Activity implements DialogInterface.OnC
     public void onCancel(DialogInterface dialog) {
         setResult(RESULT_CANCELED);
         finish();
-    }
-
-    public static boolean checkIntent(Context context, Intent intent) {
-        List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
-        return list.size() > 0;
     }
 }
