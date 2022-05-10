@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">贴纸层级</string>
+    <string name="app_name">挂件层级</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -13,6 +13,14 @@
     </string-array>
 
     <string-array name="decal_bitmap_items">
+        <item>assets://decals/xy0.webp</item>
+        <item>assets://decals/xy1.webp</item>
+        <item>assets://decals/xy2.webp</item>
+        <item>assets://decals/xy3.webp</item>
+        <item>assets://decals/xy4.webp</item>
+        <item>assets://decals/xy5.webp</item>
+        <item>assets://decals/xy6.webp</item>
+        <item>assets://decals/xy7.webp</item>
         <item>assets://decals/decal_run.png</item>
         <item>assets://decals/decal_runtoendless.png</item>
         <item>assets://decals/decal_tobebatman.png</item>
@@ -54,6 +62,14 @@
     </string-array>
 
     <string-array name="decal_des_items">
+        <item>西游0</item>
+        <item>西游1</item>
+        <item>西游2</item>
+        <item>西游3</item>
+        <item>西游4</item>
+        <item>西游5</item>
+        <item>西游6</item>
+        <item>西游7</item>
         <item>Run</item>
         <item>Run出无限</item>
         <item>To Be Batman</item>

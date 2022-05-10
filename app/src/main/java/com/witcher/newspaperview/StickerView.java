@@ -33,7 +33,7 @@ public class StickerView extends BaseView {
     public static final float PAPER_SCALE_MAX = 10f;
     public static final float PAPER_SCALE_MIN = 0.1f;
     //数量边界
-    public static final int PAPER_MAX = 20;
+    public static final int PAPER_MAX = 9999;
 
     private final Paint mPaintForLineAndCircle;
     private final Paint mPaintFlip;
