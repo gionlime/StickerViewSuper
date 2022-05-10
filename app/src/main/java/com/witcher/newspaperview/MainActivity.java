@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -25,11 +26,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mFuncCrop, mFuncDecal, mFuncFilter;
 
     private CropView mCropView;
-    private NewsPaperView mNewsPaperView;
+    private StickerView mNewsPaperView;
 
     private Toolbar toolbar;
 
     private RecyclerView mRecyclerView;
+    private LinearLayout ll_btn;
 
     private String[] decalList;
     private String[] desList;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFuncCrop = (TextView) findViewById(R.id.tv_main_crop);
         mFuncCrop.setOnClickListener(this);
         mFuncDecal = (TextView) findViewById(R.id.tv_main_decal);
+        ll_btn = (LinearLayout) findViewById(R.id.ll_btn);
+
         mFuncDecal.setOnClickListener(this);
         mFuncFilter = (TextView) findViewById(R.id.tv_main_filter);
         mFuncFilter.setOnClickListener(this);
@@ -56,9 +60,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
 
         mCropView = (CropView) findViewById(R.id.main_crop_view);
-        mNewsPaperView = (NewsPaperView) findViewById(R.id.main_decal_view);
+        mNewsPaperView = (StickerView) findViewById(R.id.main_decal_view);
 
         initRecyclerView();
+
+
+        ll_btn.setVisibility(View.GONE);
+        mFuncCrop.setSelected(false);
+        mFuncDecal.setSelected(false);
+        mFuncFilter.setSelected(false);
+        mFuncDecal.setSelected(true);
+        mRecyclerView.setVisibility(View.VISIBLE);
+        mNewsPaperView.setVisibility(View.VISIBLE);
     }
 
     public void initRecyclerView() {

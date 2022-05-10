@@ -29,7 +29,7 @@ import java.util.Random;
  */
 
 
-public class NewsPaperView extends BaseView {
+public class StickerView extends BaseView {
 
     //缩放边界
     public static final float PAPER_SCALE_MAX = 10f;
@@ -58,7 +58,7 @@ public class NewsPaperView extends BaseView {
 
     private List<ImageGroup> mDecalImageGroupList = new ArrayList<>();
 
-    public NewsPaperView(Context context, AttributeSet attributeSet) {
+    public StickerView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         mDeleteIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_close);
         mFlipIcon = BitmapFactory.decodeResource(getResources(), R.drawable.jingxiang);

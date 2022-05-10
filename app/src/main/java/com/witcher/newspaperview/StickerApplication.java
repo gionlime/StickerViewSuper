@@ -11,7 +11,7 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 /**
  * Created by JunyiZhou on 2016/2/3.
  */
-public class NewsPaperApplication extends Application {
+public class StickerApplication extends Application {
 
     @Override
     public void onCreate() {

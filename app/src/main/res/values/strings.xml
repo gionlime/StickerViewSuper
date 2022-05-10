@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewsPaperView</string>
+    <string name="app_name">贴纸层级</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -13,18 +13,6 @@
     </string-array>
 
     <string-array name="decal_bitmap_items">
-        <item>assets://decals/decal_awesome.png</item>
-        <item>assets://decals/decal_batman.png</item>
-        <item>assets://decals/decal_beastmode.png</item>
-        <item>assets://decals/decal_catwoman.png</item>
-        <item>assets://decals/decal_fallinlove.png</item>
-        <item>assets://decals/decal_ftmodu.png</item>
-        <item>assets://decals/decal_girlonfire.png</item>
-        <item>assets://decals/decal_itsfittime.png</item>
-        <item>assets://decals/decal_megabotfight.png</item>
-        <item>assets://decals/decal_megabotnormal.png</item>
-        <item>assets://decals/decal_moring.png</item>
-        <item>assets://decals/decal_push.png</item>
         <item>assets://decals/decal_run.png</item>
         <item>assets://decals/decal_runtoendless.png</item>
         <item>assets://decals/decal_tobebatman.png</item>
@@ -66,18 +54,6 @@
     </string-array>
 
     <string-array name="decal_des_items">
-        <item>Awesome</item>
-        <item>蝙蝠侠</item>
-        <item>Beast Mode</item>
-        <item>猫女</item>
-        <item>Fall In Love</item>
-        <item>FT魔都</item>
-        <item>Girl On Fire</item>
-        <item>It\'s FitTime</item>
-        <item>Megabot Fight</item>
-        <item>Megabot Normal</item>
-        <item>Moring</item>
-        <item>Push</item>
         <item>Run</item>
         <item>Run出无限</item>
         <item>To Be Batman</item>
