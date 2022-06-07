@@ -104,7 +104,8 @@ public class StickerView extends BaseView {
         float x4 = points[6];
         float y4 = points[7];
 
-        mPaintForLineAndCircle.setColor(Color.RED);
+        mPaintForLineAndCircle.setColor(Color.WHITE);
+        mPaintForLineAndCircle.setStrokeWidth(5);
         canvas.drawLine(x1, y1, x2, y2, mPaintForLineAndCircle);
         canvas.drawLine(x2, y2, x4, y4, mPaintForLineAndCircle);
         canvas.drawLine(x4, y4, x3, y3, mPaintForLineAndCircle);
